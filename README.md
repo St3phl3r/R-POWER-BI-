@@ -1,3 +1,7 @@
+LINK FOR MY DASH BOARD 
+https://app.powerbi.com/groups/me/reports/c019e6d5-fc1a-4ba2-8d9f-9adeaa2cb005/ReportSection 
+
+
 # R-POWER-BI-
 
 I was handed a data set regarding the performance of Hollywood movies as my first assignment. That data set was uploaded to PositCloud, where I cleaned and analysed it. Please see below the cleaned-up R script. I discovered throughout my study that the original code for the missing data was flawed. I continued my research and discovered a working code. is.na(df) = = 0, J; df - df rowSums;
