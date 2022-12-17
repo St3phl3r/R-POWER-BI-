@@ -1,0 +1,71 @@
+#Load data
+df‹-read…csv("/cloud/project/HollywoodsMostProfitableStories.csv")
+#Take a look at the data
+View(df)
+#Load library
+install.packages ("tidyverse")
+#Import library
+library(tidyverse)
+#Check data types
+str(df)
+# Check for missing values:
+colSums(is.na(df))
+#Drop missing values
+df <- df[rowSums(is.na(df)) == 0,
+. omit (df)
+# Check for missing values
+28
+missing <- !complete.cases (df)
+29
+df[missing, ]
+
+# check to make sure that the column has been removed
+head(df)
+#check for duplicates dim(df[duplicated(df$Film), J) [1]
+36
+fround off values to 2 places
+38
+30
+40 df$Profitability<-round(df$Profitability,digit-2)
+df$Worldwide.Gross<-round(df$Worldwide.Gross,digit-2)
+42
+43
+44
+45
+46
+47
+#View (df)
+dim(df)
+ffcheck for outliers using a boxplot
+library (ggplot2)
+48
+49
+50
+51
+52
+53
+#Create a boxplot that highlights the outliers
+ggplot(df,aes(x-Profitability,y-Worldwide.Gross))+geom_boxplot(outlier.colour="red",outlier.shape=1)+scale_x_continuous(labels=scales::comma)+coord
+#Remove outliers in 'Profitability'
+54
+55
+56Q1<-quantile(df$Profitability,.25)
+57Q3<-quantile(df$Profitability,.75)
+58
+59no_outliers<-subset (df, df$Profitability> (01-1.5*IQR) & df$Profitability <(03 + 1.5*IQR))
+dim(no outliers)
+#Remove outliers in 'Worldwide.Gross
+Q1 <- quantile(no outliers$Worldwide.Gross, .25)
+Q3 <-quantile(no _outliers$worldwide.Gross, . 75)
+IQR < - IQ(no_outliers$Worldwide.Gross)
+df1<-subset (no_outliers,no_outliers$Worldwide.Gross> (Q1-1.5*IQR)&no_outliers$Worldwide.Gross<(03+1.5*IQR))
+dim(df1)
+#Summary Statistics/Univariate Analysis summary (df1)
+#hivariate analysis
+#scatterplot
+esplot (df1, ans (x- Lead. studio, y-Rotten. Tomatoes. .))+ geom_point ()+
+scale_y_continuous(labels scales: : comma)+coord_cartesian(ylim-c(0,110))+theme(axis.text.xelement text(angle 90))
+then Char
+ggplot (df1, aes(x-Year))+geom_bar ()
+#Export clean data
+write.csv(df1, "claen_df.csv")
